@@ -152,7 +152,8 @@ OV.Viewer = class
     Init (canvas)
     {
         this.canvas = canvas;
-        this.canvas.id = 'viewer';
+        // CHANGE: make id a little more unique
+        this.canvas.id = 'os3dv_viewer';
 
         let parameters = {
             canvas : this.canvas,

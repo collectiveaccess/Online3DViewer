@@ -131,7 +131,10 @@ OV.Init3DViewerElements = function (onReady)
     }
 
     let viewerElements = [];
-    window.addEventListener ('load', () => {
+    
+    // CHANGE: CollectiveAccess loads in dynamically created overlay, so we need
+    // it to load on init
+    //window.addEventListener ('load', () => {
         let elements = document.getElementsByClassName ('online_3d_viewer');
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
@@ -141,7 +144,7 @@ OV.Init3DViewerElements = function (onReady)
         if (onReady !== undefined && onReady !== null) {
             onReady (viewerElements);
         }
-    }); 
+    //}); 
 
     window.addEventListener ('resize', () => {
         for (let i = 0; i < viewerElements.length; i++) {
